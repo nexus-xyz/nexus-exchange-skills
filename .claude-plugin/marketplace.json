@@ -1,0 +1,17 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "nexus-exchange",
+  "description": "Official Nexus Exchange plugins for Claude Code.",
+  "owner": {
+    "name": "Nexus",
+    "url": "https://github.com/nexus-xyz"
+  },
+  "plugins": [
+    {
+      "name": "nexus-exchange",
+      "description": "Skills and MCP tools for trading on Nexus Exchange.",
+      "source": "./",
+      "category": "finance"
+    }
+  ]
+}

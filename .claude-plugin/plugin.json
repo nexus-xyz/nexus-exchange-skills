@@ -1,0 +1,11 @@
+{
+  "name": "nexus-exchange",
+  "version": "0.1.0",
+  "description": "Skills and MCP tools for trading on Nexus Exchange: setup, safe order placement, portfolio risk, troubleshooting.",
+  "author": {
+    "name": "Nexus",
+    "url": "https://github.com/nexus-xyz"
+  },
+  "repository": "https://github.com/nexus-xyz/nexus-exchange-skills",
+  "license": "MIT OR Apache-2.0"
+}
