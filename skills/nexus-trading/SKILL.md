@@ -11,7 +11,7 @@ Orders move money. Follow this sequence every time, even for "just a quick" orde
 
 1. **Know the network.** Default is testnet (play funds). If the target moves
    real funds, say so to the user in plain words before doing anything else.
-2. **Check the market.** `nexus market status <MARKET>` (MCP `get_market_status`)
+2. **Check the market.** `nexus market status <MARKET>` (MCP `fetch_market_status`)
    must not be halted. Read tick/lot rules from `nexus markets` or
    `nexus market risk-params <MARKET>`. Do not round a price or size yourself;
    ask the user if theirs does not fit.
@@ -52,8 +52,8 @@ MCP tools for those.
 
 ## MCP
 
-`place_order`, `preview_order`, `place_orders_batch`, `amend_order`, `cancel_order`,
-`get_open_orders`, `get_order`, `get_fills`.
+`create_order`, `preview_order`, `create_orders`, `edit_order`, `cancel_order`,
+`fetch_open_orders`, `fetch_order`, `fetch_my_trades`.
 
 Order fields: `market_id`, `side` (`buy`|`sell`), `type`, `size` (a decimal
 **string**), plus by type:
@@ -72,7 +72,7 @@ A field on the wrong type is rejected, not ignored. Optional: `time_in_force`
 
 ## Closing a position
 
-Read the position first (`nexus positions` / `get_positions`), then place the
+Read the position first (`nexus positions` / `fetch_positions`), then place the
 opposite side for its exact size with reduce-only. Do not compute size from
 memory of an earlier read; a fill may have landed since.
 
