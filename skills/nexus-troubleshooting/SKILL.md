@@ -36,7 +36,7 @@ Resolution order: flags, then env vars, then the config file
 
 ## Specific errors
 
-- **429 / rate limited:** `nexus account rate-limit` (MCP `get_rate_limit_status`)
+- **429 / rate limited:** `nexus account rate-limit` (MCP `fetch_rate_limit_status`)
   shows tier, remaining, and reset. Wait for the reset. `order preview` spends
   the trading bucket too, so do not preview in a loop.
 - **`502 authoritative_margin_unavailable`:** margin could not be read right

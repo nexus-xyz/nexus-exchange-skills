@@ -11,7 +11,7 @@ description: Read and explain a Nexus Exchange account correctly (equity, margin
 nexus account state --output json     # summary + every open position, one read
 ```
 
-MCP: `get_account_state`.
+MCP: `fetch_account_state`.
 
 Prefer this over `account summary` + `positions`. Those are two requests, and a
 fill landing between them gives totals that disagree with the position list.
@@ -40,15 +40,15 @@ are null, say which and why.
 
 | Question | CLI | MCP |
 |---|---|---|
-| Fee tier, maker/taker bps | `nexus account fees` | `get_account_fees` |
-| Equity / PnL / volume over time | `nexus account portfolio-history --window day\|week\|month\|all` | `get_portfolio_history` |
-| Equity only, finer grain | `nexus account equity-history` | `get_equity_history` |
-| Realized PnL on closed positions | `nexus closed-positions` | `get_closed_positions` |
-| Executions | `nexus fills --limit 100` | `get_fills` |
-| Funding paid / received | `nexus account funding` | `get_funding_payments` |
-| Deposits, withdrawals | `nexus account deposits`, `nexus withdrawals` | `list_deposits`, `get_withdrawals` |
-| Market risk parameters | `nexus market risk-params <MARKET>` | `get_market_risk_params` |
-| ADL events touching the account | `nexus account adl-history 0x<ADDRESS>` | `get_adl_history` |
+| Fee tier, maker/taker bps | `nexus account fees` | `fetch_trading_fees` |
+| Equity / PnL / volume over time | `nexus account portfolio-history --window day\|week\|month\|all` | `fetch_portfolio_history` |
+| Equity only, finer grain | `nexus account equity-history` | `fetch_equity_history` |
+| Realized PnL on closed positions | `nexus closed-positions` | `fetch_positions_history` |
+| Executions | `nexus fills --limit 100` | `fetch_my_trades` |
+| Funding paid / received | `nexus account funding` | `fetch_funding_history` |
+| Deposits, withdrawals | `nexus account deposits`, `nexus withdrawals` | `fetch_deposits`, `fetch_withdrawals` |
+| Market risk parameters | `nexus market risk-params <MARKET>` | `fetch_market_risk_params` |
+| ADL events touching the account | `nexus account adl-history 0x<ADDRESS>` | `fetch_adl_history` |
 
 A negative maker fee is a rebate.
 

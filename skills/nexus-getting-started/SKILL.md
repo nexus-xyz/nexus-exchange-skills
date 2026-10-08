@@ -22,7 +22,7 @@ nexus ticker BTC-USDX-PERP
 nexus orderbook BTC-USDX-PERP
 ```
 
-MCP: `list_markets`, `get_ticker`, `get_orderbook`. If this fails, stop and
+MCP: `fetch_markets_summary`, `fetch_ticker`, `fetch_order_book`. If this fails, stop and
 troubleshoot (see `nexus-troubleshooting`); credentials will not fix it.
 
 ## 2. Sign in and mint an API key
@@ -61,7 +61,7 @@ nexus account faucet            # separate fixed grant, on its own cooldown
 nexus balance
 ```
 
-MCP: `claim_credit`, `claim_faucet`, `get_balance`. Both are refused on any
+MCP: `claim_credit`, `claim_faucet`, `fetch_balance`. Both are refused on any
 network that does not hold play funds, by design. A failed claim usually
 means today's allowance is spent. The account is not broken.
 
