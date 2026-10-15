@@ -31,7 +31,7 @@ once per order, not in a loop.
 
 ```sh
 nexus order preview --market BTC-USDX-PERP --side buy --type limit --price 84000 --quantity 0.01
-nexus order place   --market BTC-USDX-PERP --side buy --type limit --price 84000 --quantity 0.01 --tif GTC
+nexus order place   --market BTC-USDX-PERP --side buy --type limit --price 84000 --quantity 0.01 --tif gtc
 nexus order amend  <ORDER_ID> --market BTC-USDX-PERP --price 85000
 nexus order cancel <ORDER_ID> --market BTC-USDX-PERP
 nexus order cancel --market BTC-USDX-PERP      # every order in one market
@@ -39,7 +39,7 @@ nexus order cancel --all
 nexus order batch orders.json                  # JSON array; '-' reads stdin
 ```
 
-- `--type` is `limit` or `market`. `--tif` is `GTC` (default), `IOC`, `FOK`, `post-only`.
+- `--type` is `limit` or `market`. `--tif` is `gtc` (default), `ioc`, `fok` or `post-only`, in lowercase; the CLI rejects `GTC`.
 - `--reduce-only` guarantees the order only shrinks a position. Use it for every
   closing order.
 - By-id commands (`get`, `amend`, `cancel <ID>`) require `--market`.
