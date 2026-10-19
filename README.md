@@ -1,5 +1,9 @@
 # nexus-exchange-skills
 
+> [!WARNING]
+> **This repository is archived and no longer maintained.** The Nexus Exchange API it was built for is being
+> shut down, and no further releases will be published.
+
 Agent skills for trading on [Nexus Exchange](https://exchange.nexus.xyz) with the
 [`nexus` CLI](https://github.com/nexus-xyz/nexus-exchange-cli) or the
 [Nexus MCP server](https://github.com/nexus-xyz/nexus-exchange-mcp).
